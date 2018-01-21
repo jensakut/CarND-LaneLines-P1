@@ -11,11 +11,12 @@
 The goals / steps of this project are the following:
 * Make a pipeline that finds lane lines on the road
 * Reflect on your work in a written report
+<img src="examples/laneLines_thirdPass.jpg" width="480" alt="Combined Image" />
 
 
 [//]: # (Image References)
 
-[image1]: ./examples/grayscale.jpg "Grayscale"
+[image1]: ./test_images_output/solidYellowLeft.jpg "Solid Yellow Left"
 
 ---
 
@@ -23,11 +24,11 @@ The goals / steps of this project are the following:
 
 ### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
+My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I applied Gaussian Blur to it. The Canny-Filter searches for Gradients in the grayscale and marks them. The mask function selects the area in front of the car. Then, the Hough function searches straight lines in the area. Those lines get sorted into right and left lanes by the modified draw_lines() function. The search criteria looks into the angle of the line, whether it matches the expected interval. The lists for right and left contain the arguments of a straight line m and b. The mean of these are used in order to calculate the straight beams. 
+[image2]: ./test_images_output/gray_blur.jpg "gray_blur"
+[image3]: ./test_images_output/edges.jpg "edges"
+[image4]: ./test_images_output/masked.jpg "masked"
 
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
-
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
 
 ![alt text][image1]
 
@@ -35,13 +36,17 @@ If you'd like to include images to show how the pipeline works, here is how to i
 ### 2. Identify potential shortcomings with your current pipeline
 
 
-One potential shortcoming would be what would happen when ... 
+The main issue is to build a contrast-filter that works consistently. Other cars in the masked area as well as bad contrast confuse the filter. Rain, snow, other cars, tight corners, or a bad contrast between the pavement and the marking need further sophistication. 
 
-Another shortcoming could be ...
+One known bug is in the challenge video, where the beams are displayed wrong, although the same pipeline works in the required examples. 
+
 
 
 ### 3. Suggest possible improvements to your pipeline
 
-A possible improvement would be to ...
+Since this particular algorithm is purpose-build for the examples with light traffic in sunshine, further tuning of the parameters is necessary. 
+In the longer run either changing the color from gray to a range where the pavement/marking color range is enhanced may be more beneficial. 
 
-Another potential improvement could be to ...
+Another potential improvement could be to detect the other lanes. Programming an algorithm, which detects the contrast between road and grass on the side, would enable masking for the complete road. Then, an advanced feature detection may be able to see the other lanes, and once the other cars are detected, they could be excluded from the lane algorithm. 
+
+
