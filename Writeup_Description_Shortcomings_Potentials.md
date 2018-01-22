@@ -49,7 +49,7 @@ alt="Challenge beams with green lines" width="240" height="180" border="10" /></
 
 ### 3. Possible improvements
 
-* Usually, road markings are pretty continous, so a moving average over one second or even better a Kalman Filter would be very interesting to stabilize the markings. 
+* Usually, road markings are pretty continous, so a Kalman Filter would be very interesting to stabilize the markings. 
 * Since this particular algorithm is purpose-build for the examples with light traffic in sunshine, further tuning of the parameters is necessary. 
 * In the longer run either changing the color from gray to a range where the pavement/marking color range is enhanced may be more beneficial. 
 * Another potential improvement could be to detect the other lanes. Programming an algorithm, which detects the contrast between road and grass on the side, would enable masking for the complete road. Then, an advanced feature detection may be able to see the other lanes, and once the other cars are detected, they could be excluded from the lane algorithm. 
