@@ -12,7 +12,7 @@ The goals / steps of this project are the following:
 * Reflect on your work in a written report
 <img src="examples/laneLines_thirdPass.jpg" width="480" alt="Combined Image" />
 
-
+Here is a video showing the result: 
 [![SolidYellowLeft](http://img.youtube.com/vi/Px1KuJr8Dsg/0.jpg)](https://youtu.be/Px1KuJr8Dsg)
 
 
@@ -37,6 +37,7 @@ Then, the Hough function searches straight lines in the area. Those lines get so
 * The lanes are assumed to be straight, as seen in the challenge, sharp corners need an improved algorithm. 
 * The perspective dynamically changes the lengths of both the lines and the gaps, so the detection parameters are always a compromise between the individual marker in front of the car and the "shorter" line in the distance. 
 
+The challenge video highlights those shortcomings: 
 [![Challenge](http://img.youtube.com/vi/ACiUXz4cYB8/0.jpg)](https://youtu.be/ACiUXz4cYB8)
 
 
