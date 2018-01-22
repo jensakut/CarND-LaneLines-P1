@@ -22,13 +22,11 @@ The goals / steps of this project are the following:
 
 ### 1. Description of the pipeline
 
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I applied Gaussian Blur to it. 
-<img src="/test_images_output/gray_blur.png" width="480" alt="gray_blur" />
-The Canny-Filter searches for Gradients in the grayscale and marks them. 
-<img src="/test_images_output/edges.png" width="480" alt="edges" />
-The mask function selects the area in front of the car. 
-<img src="/test_images_output/masked.png" width="480" alt="masked" />
+My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I applied Gaussian Blur to it. The Canny-Filter searches for Gradients in the grayscale and marks them. The mask function selects the area in front of the car. 
 Then, the Hough function searches straight lines in the area. Those lines get sorted into right and left lanes by the modified draw_lines() function. The search criteria is the angle of the line, whether it matches the expected interval. The lists for right and left contain the arguments of a straight line m and b. The mean of these are used in order to calculate the straight beams. 
+<img src="/test_images_output/gray_blur.png" width="480" alt="gray_blur" />
+<img src="/test_images_output/edges.png" width="480" alt="edges" />
+<img src="/test_images_output/masked.png" width="480" alt="masked" />
 
 
 
