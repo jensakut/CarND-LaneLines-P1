@@ -13,7 +13,10 @@ The goals / steps of this project are the following:
 <img src="examples/laneLines_thirdPass.jpg" width="480" alt="Combined Image" />
 
 Here is a video showing the result: 
-[![SolidYellowLeft](http://img.youtube.com/vi/Px1KuJr8Dsg/0.jpg)](https://youtu.be/Px1KuJr8Dsg)
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=Px1KuJr8Dsg
+" target="_blank"><img src="http://img.youtube.com/vi/Px1KuJr8Dsg/0.jpg" 
+alt="Challenge beams with green lines" width="240" height="180" border="10" /></a>
 
 
 ---
@@ -27,6 +30,7 @@ Then, the Hough function searches straight lines in the area. Those lines get so
 <img src="/test_images_output/gray_blur.png" width="480" alt="gray_blur" />
 <img src="/test_images_output/edges.png" width="480" alt="edges" />
 <img src="/test_images_output/masked.png" width="480" alt="masked" />
+<img src="/test_images_output/hough.jpg" width="480" alt="hough" />
 
 
 
@@ -38,8 +42,10 @@ Then, the Hough function searches straight lines in the area. Those lines get so
 * The perspective dynamically changes the lengths of both the lines and the gaps, so the detection parameters are always a compromise between the individual marker in front of the car and the "shorter" line in the distance. 
 
 The challenge video highlights those shortcomings: 
-[![Challenge](http://img.youtube.com/vi/ACiUXz4cYB8/0.jpg)](https://youtu.be/ACiUXz4cYB8)
 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=Jxk_FkwkNCg
+" target="_blank"><img src="http://img.youtube.com/vi/Jxk_FkwkNCg/0.jpg" 
+alt="Challenge beams with green lines" width="240" height="180" border="10" /></a>
 
 ### 3. Possible improvements
 
