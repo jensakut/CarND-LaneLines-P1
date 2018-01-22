@@ -13,9 +13,8 @@ The goals / steps of this project are the following:
 <img src="examples/laneLines_thirdPass.jpg" width="480" alt="Combined Image" />
 
 
-[//]: # (Image References)
+[![SolidYellowLeft](http://img.youtube.com/vi/Px1KuJr8Dsg/0.jpg)](https://youtu.be/Px1KuJr8Dsg)
 
-[image1]: ./test_images_output/solidYellowLeft.jpg "Solid Yellow Left"
 
 ---
 
@@ -23,10 +22,14 @@ The goals / steps of this project are the following:
 
 ### 1. Description of the pipeline
 
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I applied Gaussian Blur to it. The Canny-Filter searches for Gradients in the grayscale and marks them. The mask function selects the area in front of the car. Then, the Hough function searches straight lines in the area. Those lines get sorted into right and left lanes by the modified draw_lines() function. The search criteria is the angle of the line, whether it matches the expected interval. The lists for right and left contain the arguments of a straight line m and b. The mean of these are used in order to calculate the straight beams. 
+My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I applied Gaussian Blur to it. 
 <img src="/test_images_output/gray_blur.png" width="480" alt="gray_blur" />
+The Canny-Filter searches for Gradients in the grayscale and marks them. 
 <img src="/test_images_output/edges.png" width="480" alt="edges" />
+The mask function selects the area in front of the car. 
 <img src="/test_images_output/masked.png" width="480" alt="masked" />
+Then, the Hough function searches straight lines in the area. Those lines get sorted into right and left lanes by the modified draw_lines() function. The search criteria is the angle of the line, whether it matches the expected interval. The lists for right and left contain the arguments of a straight line m and b. The mean of these are used in order to calculate the straight beams. 
+
 
 
 ### 2. Potential shortcomings
@@ -35,6 +38,8 @@ My pipeline consisted of 5 steps. First, I converted the images to grayscale, th
 * The main issue is to build a contrast-filter that works consistently. Other cars in the masked area as well as bad contrast confuse the filter. Rain, snow, other cars, tight corners, or a bad contrast between the pavement and the marking need further sophistication. 
 * The lanes are assumed to be straight, as seen in the challenge, sharp corners need an improved algorithm. 
 * The perspective dynamically changes the lengths of both the lines and the gaps, so the detection parameters are always a compromise between the individual marker in front of the car and the "shorter" line in the distance. 
+
+[![Challenge](http://img.youtube.com/vi/ACiUXz4cYB8/0.jpg)](https://youtu.be/ACiUXz4cYB8)
 
 
 ### 3. Possible improvements
